@@ -3,8 +3,16 @@ Console.WriteLine("Hello, World!");
 
 //programma
 //stampa
+Console.WriteLine("quanti numeri vuoi nell'array?");
+int numArray = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("quali numeri vuoi nell'array?");
+int[] number = new int[numArray];
+for (int i = 0; i < numArray; i++)
+{
+    int numberInArray = Convert.ToInt32(Console.ReadLine());
+    number[i] = numberInArray;  
+}
 
-int[] number = { 2, 6, 7, 5, 3, 9 };
 StampaArray(number);
 Console.WriteLine();
 
@@ -12,14 +20,15 @@ Console.WriteLine();
 Quadrato(10);
 
 //quadrato array
-int[] newArray = new int[number.Length];
-
-ElevaArrayAlQuadrato();
+ElevaArrayAlQuadrato(number);
+Console.WriteLine("la somma dei numeri dell'array è: " + SommaElementiArray(number));
 
 //somma  array di tutti i numeri e di tutti i numeri di quadrati
-int somma = 0;
-int sommaPotenza = 0;
-SommaElementiArray();
+
+
+SommaElementiArray(number);
+
+
 
 
 
@@ -35,38 +44,52 @@ void StampaArray(int[] array)
 }
 
 //funzione quadrato
-void Quadrato(int number)
+int Quadrato(int number)
 {
-   int power = number * number;
+    int power = number * number;
     Console.WriteLine("Il quadrato del numero è: " + power);
+    return power;
 }
 //funzione quadrato array
-void ElevaArrayAlQuadrato()
+int[] ElevaArrayAlQuadrato(int[] array)
 {
-    for (int i = 0; i < number.Length; i++)
+
+    int[] newArray = new int[array.Length];
+
+    for (int i = 0; i < array.Length; i++)
     {
-        int arrPower = number[i] * number[i];
+        int arrPower = array[i] * array[i];
         
         newArray[i] = arrPower;
-        Console.WriteLine("potenza di " + number[i] + " è " + newArray[i]);
+
+        Console.WriteLine("potenza di " + array[i] + " è " + newArray[i]);
+
 
     }
     
+
+    Console.WriteLine("la somma delle potenze dei numeri dell'array è: " + SommaElementiArray(newArray));
+    
+    return newArray;
+    
+
+
 }
 
 //funzioni somma array
 
-void SommaElementiArray()
+int SommaElementiArray(int[] array)
 {
     
-    for (int i = 0; i < number.Length; i++)
+    int somma = 0;
+    for (int i = 0; i < array.Length; i++)
     {
         
-        somma =  number[i] + somma;
-        sommaPotenza = newArray[i] + sommaPotenza;
-        
+        somma =  array[i] + somma;
+              
     }
-    Console.WriteLine("la somma dei numeri dell'array è: " + somma);
-    Console.WriteLine("la somma delle potenze è: " + sommaPotenza);
     
+    
+    return somma;
+
 }
