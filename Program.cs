@@ -12,14 +12,15 @@ Console.WriteLine();
 Quadrato(10);
 
 //quadrato array
+int[] newArray = new int[number.Length];
 
 ElevaArrayAlQuadrato();
 
-//somma array
+//somma  array di tutti i numeri e di tutti i numeri di quadrati
 int somma = 0;
+int sommaPotenza = 0;
 SommaElementiArray();
 
-//somma di tutti i numeri di quadrati
 
 
 //funzioni
@@ -45,21 +46,27 @@ void ElevaArrayAlQuadrato()
     for (int i = 0; i < number.Length; i++)
     {
         int arrPower = number[i] * number[i];
-        int[] newArray = new int[number.Length];
+        
         newArray[i] = arrPower;
-        Console.WriteLine("potenza di tutti i num " + newArray[i]);
+        Console.WriteLine("potenza di " + number[i] + " è " + newArray[i]);
 
     }
+    
 }
 
 //funzioni somma array
 
 void SommaElementiArray()
 {
-    for(int i = 0; i < number.Length; i++)
+    
+    for (int i = 0; i < number.Length; i++)
     {
+        
         somma =  number[i] + somma;
+        sommaPotenza = newArray[i] + sommaPotenza;
         
     }
     Console.WriteLine("la somma dei numeri dell'array è: " + somma);
+    Console.WriteLine("la somma delle potenze è: " + sommaPotenza);
+    
 }
