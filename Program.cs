@@ -130,26 +130,28 @@ fibonacci(10) = 55
 //funzione fattoriale il fattoriale è la moltiplicazione decrescente di un num es. 3! = 3x2x1 = 6
 
 //FunctionFibonacciNumber();
-factorial(5);
+Console.WriteLine(Factorial(5));
+//Console.WriteLine(FunctionFibonacciNumber(9));
 
-int factorial(int number)      
+int Factorial(int number)
 {
-    int calcolo = 0;
-    if (number > 0 && number <= 10)
+    if (number == 1)
     {
-        calcolo = number * factorial(number - 1);
+        return 1;
+    }
+    else
+    {
+        return number * Factorial(number - 1);
     }
 
-    Console.WriteLine(calcolo);
-    return calcolo;
-    
 }
 
 
 
+//Fibonacci sequenza di numeri il cui numero successivo è la somma dei due numeri precedenti
+//prendere la somma delle due somme precedenti 
 
-
-//int[] FunctionFibonacciNumber(int[] array)
-//{
-//    return array;
-//}
+int FunctionFibonacciNumber(int num)
+{
+    //numero + somma delle somme precedenti
+}
